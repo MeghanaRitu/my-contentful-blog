@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
+import { PostType } from "@/types";
 
-export default function BlogList({ posts }) {
+export default function BlogList({ posts }: { posts: PostType[] }) {
   const [showAll, setShowAll] = useState(false);
 
   return (
