@@ -40,7 +40,7 @@ export default function BlogList({ posts }: { posts: PostType[] }) {
   );
 }
 
-function BlogPost({ post }) {
+function BlogPost({ post }: { post: PostType }) {
   return (
     <div style={{ border: "1px solid #ddd", padding: "10px", margin: "10px 0" }}>
       <h2>{post.title}</h2>
