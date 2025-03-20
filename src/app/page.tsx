@@ -1,11 +1,11 @@
 import { getBlogPosts } from "@/lib/contentfulGraphQL";
 import BlogList from "@/components/BlogList";
 
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams?: Record<string, string | string[]>;
-}) {
+interface PageProps {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default async function HomePage({ searchParams }: PageProps) {
   const locale = searchParams?.lang?.toString() || "en-US";
   const posts = await getBlogPosts(locale);
 
