@@ -49,19 +49,19 @@ function BlogPost({ post }: { post: PostType }) {
         <strong>Date & Time:</strong> {new Date(post.dateAndTime).toLocaleString()}
       </p>
 
-      {/* Optimized Images */}
-      {post.imageCollection?.items?.length > 0 &&
-        post.imageCollection.items.map((img, index) => (
-          <Image
-            key={index}
+      {post.imageCollection && post.imageCollection.items && post.imageCollection.items.length > 0 && (
+      post.imageCollection.items.map((img, index) => (
+      <Image 
+            key={index} 
             src={`${img.url}?w=800&h=600&fit=fill&fm=webp`}
             alt={`Image ${index + 1}`}
             width={800}
             height={600}
             priority={index === 0}
             style={{ borderRadius: "8px" }}
-          />
-        ))}
+      />
+      ))
+      )}
 
       <p>
         <strong>Author:</strong> {post.author}
