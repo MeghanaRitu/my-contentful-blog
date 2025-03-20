@@ -2,7 +2,7 @@
 import { getBlogPosts } from "@/lib/contentfulGraphQL";
 import BlogList from "@/components/BlogList"; // Import the new client component
 
-export default async function HomePage({ searchParams }) {
+export default async function HomePage({ searchParams }: { searchParams: any }) {
   const locale = searchParams?.lang || "en-US";
   const posts = await getBlogPosts(locale);
 
